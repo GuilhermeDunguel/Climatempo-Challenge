@@ -1,69 +1,102 @@
 @import '../../../styles/globals.scss';
 
-.headerWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+header {
   position: relative;
+  .headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  padding: 0.625rem;
+    position: relative;
 
-  width: 100vw;
+    padding: 0.625rem;
 
-  background-color: $blue500;
+    width: 100vw;
 
-  img {
-    width: 10rem;
+    background-color: $blue500;
+
+    img {
+      width: 10rem;
+    }
+
+    .settingsMenu {
+      position: absolute;
+      left: 0.75rem;
+
+      color: $gray50;
+    }
   }
 
-  .settingsMenu {
-    position: absolute;
-    left: 0.75rem;
-
-    color: $gray50;
-  }
-}
-
-.searchBarWrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  padding: 0.5rem 1rem;
-  background-color: $gray50;
-
-  .searchBarInputDiv {
+  .searchBarWrapper {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 
-    padding: 8px;
+    padding: 0.5rem 1rem;
+    background-color: $gray50;
 
-    width: 100%;
+    .searchBarInputDiv {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
-    border-radius: $radius-sm;
-    background-color: $gray100;
+      padding: 8px;
 
-    label {
-      line-height: 0;
-    }
-
-    input {
       width: 100%;
-      background-color: transparent;
 
-      &:focus {
-        outline: none;
+      border-radius: $radius-sm;
+      background-color: $gray100;
+
+      label {
+        line-height: 0;
       }
-    }
 
-    .searchInputIcon {
-      color: $blue500;
-    }
+      input {
+        width: 100%;
+        background-color: transparent;
 
-    &:focus-within {
-      outline: 2px solid $blue500;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .searchInputIcon {
+        color: $blue500;
+      }
+
+      .autoCompleteWrapper {
+        display: none;
+        align-items: left;
+        flex-direction: column;
+
+        width: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 5.625rem;
+
+        button {
+          padding: 0.5rem 1rem;
+
+          color: $gray400;
+          text-align: left;
+
+          background-color: $gray50;
+
+          filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+
+          &:nth-child(even) {
+            background-color: $gray100;
+          }
+        }
+      }
+
+      &:focus-within {
+        outline: 2px solid $blue500;
+        .autoCompleteWrapper {
+          display: flex;
+        }
+      }
     }
   }
 }
