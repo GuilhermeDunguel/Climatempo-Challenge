@@ -4,14 +4,21 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite\" \"npm run server\"",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch --delay[2000] ./server/locales.json"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.2",
+    "@radix-ui/react-radio-group": "^1.1.0",
     "axios": "^1.2.0",
+    "json-server": "^0.17.1",
+    "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-search-autocomplete": "^8.2.1",
+    "sass": "^1.56.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

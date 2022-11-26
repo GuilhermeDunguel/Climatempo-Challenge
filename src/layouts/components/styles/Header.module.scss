@@ -1,0 +1,69 @@
+@import '../../../styles/globals.scss';
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  padding: 0.625rem;
+
+  width: 100vw;
+
+  background-color: $blue500;
+
+  img {
+    width: 10rem;
+  }
+
+  .settingsMenu {
+    position: absolute;
+    left: 0.75rem;
+
+    color: $gray50;
+  }
+}
+
+.searchBarWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 1rem;
+  background-color: $gray50;
+
+  .searchBarInputDiv {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 8px;
+
+    width: 100%;
+
+    border-radius: $radius-sm;
+    background-color: $gray100;
+
+    label {
+      line-height: 0;
+    }
+
+    input {
+      width: 100%;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .searchInputIcon {
+      color: $blue500;
+    }
+
+    &:focus-within {
+      outline: 2px solid $blue500;
+    }
+  }
+}
