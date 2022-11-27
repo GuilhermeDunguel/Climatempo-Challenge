@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
-import { InitialPage } from './pages/InitialPage'
-import { WeatherCard } from './pages/components/WeatherCard'
+import React from 'react'
 import { APIDataContextProvider } from './context/APIDataContext'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import './styles/globals.scss'

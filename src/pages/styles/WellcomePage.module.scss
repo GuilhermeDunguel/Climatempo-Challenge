@@ -1,0 +1,25 @@
+@import '../../styles/globals.scss';
+
+.wellcomeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  height: 75vh;
+
+  color: $gray400;
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    width: 12.5rem;
+
+    font-size: 1rem;
+    text-align: center;
+  }
+}
