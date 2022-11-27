@@ -15,8 +15,37 @@ interface localeDataType {
   longitude: number
 }
 
+interface weatherDataType {
+  locale: {
+    id: number
+    name: string
+    state: string
+    latitude: number
+    longitude: string
+  }
+  period: {
+    begin: string
+    end: string
+  }
+  weather: {
+    date: string
+    rain: {
+      probability: number
+      precipitation: number
+    }
+    temperature: {
+      min: number
+      max: number
+    }
+    text: string
+  }[]
+}
+
 interface APIDataContextProps {
   locales: localeDataType[]
+  weather: weatherDataType[]
+  setLocaleId: React.Dispatch<React.SetStateAction<number>>
+  localeId: number
 }
 
 interface ContextProviderProps {
@@ -27,20 +56,36 @@ export const APIDataContext = createContext({} as APIDataContextProps)
 
 export function APIDataContextProvider({ children }: ContextProviderProps) {
   const [locales, setLocales] = useState([])
+  const [weather, setWeather] = useState<weatherDataType[]>([])
+
+  const [localeId, setLocaleId] = useState(0)
 
   const fetchApiData = useCallback(async () => {
-    const locales = await api.get('data').then((data) => data.data)
-    setLocales(locales)
-  }, [locales])
+    setWeather([])
+
+    const weatherResponse: weatherDataType[] = await api
+      .get('weather')
+      .then((data) => data.data)
+
+    setLocales(await api.get('locales').then((data) => data.data))
+    setWeather(
+      weatherResponse.filter((localWeather) => {
+        return localWeather.locale.id === localeId
+      })
+    )
+  }, [locales, weather, localeId])
 
   useEffect(() => {
     fetchApiData()
-  }, [])
+  }, [localeId])
 
   return (
     <APIDataContext.Provider
       value={{
         locales,
+        weather,
+        localeId,
+        setLocaleId,
       }}
     >
       {children}

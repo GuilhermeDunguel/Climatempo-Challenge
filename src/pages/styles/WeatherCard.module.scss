@@ -1,0 +1,129 @@
+@import '../../styles/globals.scss';
+
+.weatherCardWrapper {
+  width: 100%;
+
+  margin: 0.875rem 1rem;
+
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.075));
+  .weatherCardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.625rem;
+
+    color: $gray400;
+
+    border-radius: $radius-sm;
+    background-color: $gray50;
+
+    span {
+      font-size: 0.875rem;
+    }
+
+    .openCardButton {
+      line-height: 0;
+    }
+  }
+  .weatherCardContentClosed {
+    display: none;
+  }
+  .weatherCardContentOpen {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding: 0.625rem;
+
+    border-radius: 0 0 $radius-sm $radius-sm;
+    background-color: $gray200;
+
+    p {
+      font-size: 0.875rem;
+    }
+
+    .temperatureWrapper,
+    .rainWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .temperatureTitle,
+      .rainTitle {
+        color: $gray400;
+        font-size: 0.875rem;
+        font-weight: 600;
+
+        &::before {
+          content: '';
+
+          margin-right: 0.5rem;
+
+          border: 0.1875rem solid $red500;
+          border-radius: 500px;
+        }
+      }
+    }
+
+    .temperatureWrapper {
+      .temperatureTitle {
+      }
+      .temperatureDataDiv {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .temperatureUpDiv,
+        .temperatureDownDiv {
+          display: flex;
+          align-items: center;
+          gap: 0.125rem;
+        }
+
+        .temperatureUpDiv {
+          svg {
+            color: $red500;
+          }
+          span {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+
+        .temperatureDownDiv {
+          svg {
+            color: $sky500;
+          }
+          span {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .rainWrapper {
+      .rainTitle {
+        &::before {
+          border: 0.1875rem solid $sky500;
+        }
+      }
+      .rainDataDiv {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        svg {
+          color: $sky500;
+        }
+
+        span {
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

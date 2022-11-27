@@ -1,0 +1,54 @@
+@import '../../styles/globals.scss';
+
+.wellcomeWrapper,
+.loadingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  height: 75vh;
+
+  color: $gray400;
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    width: 12.5rem;
+
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+.weatherPageWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 8px;
+  padding: 0 1rem;
+
+  width: 100%;
+}
+
+.loadingWrapper {
+  svg {
+    color: $blue500;
+    animation: spin infinite 0.8s;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

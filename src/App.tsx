@@ -1,16 +1,16 @@
-import React from 'react'
-import { InitialPage } from './components/InitialPage'
+import React, { useContext } from 'react'
+import { InitialPage } from './pages/InitialPage'
+import { WeatherCard } from './pages/components/WeatherCard'
 import { APIDataContextProvider } from './context/APIDataContext'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import './styles/globals.scss'
+import { Main } from './pages/Main'
 
 function App() {
-  const data = []
-
   return (
     <APIDataContextProvider>
       <DefaultLayout>
-        {data.length === 0 ? <InitialPage /> : 'cheio'}
+        <Main />
       </DefaultLayout>
     </APIDataContextProvider>
   )

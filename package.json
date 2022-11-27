@@ -7,7 +7,7 @@
     "dev": "concurrently \"vite\" \"npm run server\"",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "server": "json-server --w --delay 2000 ./server/locales.json --kill-others-on-fail"
+    "server": "json-server --w --delay 1000 ./server/locales.json --kill-others-on-fail"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.2",
