@@ -2,10 +2,12 @@ import React, {
   createContext,
   ReactNode,
   useCallback,
+  useContext,
   useEffect,
   useState,
 } from 'react'
 import { api } from '../utils/axios'
+import { SettingsContext } from './SettingsContext'
 
 interface localeDataType {
   id: number

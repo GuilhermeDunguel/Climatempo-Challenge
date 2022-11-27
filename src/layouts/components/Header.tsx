@@ -6,6 +6,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import logoWhite from '../../assets/logo-white.png'
 import { List, MagnifyingGlass, X } from 'phosphor-react'
 import { APIDataContext } from '../../context/APIDataContext'
+import SettingsDialog from './SettingsDialog'
 
 export default function Header() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -23,10 +24,7 @@ export default function Header() {
           </Dialog.Trigger>
           <Dialog.Portal>
             <Dialog.Overlay />
-            <Dialog.Content>
-              <Dialog.Title>Configurações</Dialog.Title>
-              <Dialog.Description></Dialog.Description>
-            </Dialog.Content>
+            <SettingsDialog />
           </Dialog.Portal>
         </Dialog.Root>
       </div>

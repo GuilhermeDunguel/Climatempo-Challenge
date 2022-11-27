@@ -24,7 +24,7 @@ export function WeatherPage() {
                   key={weatherCard.date}
                   date={weatherCard.date}
                   rain={weatherCard.rain}
-                  temperature={weatherCard.temperature}
+                  temperatures={weatherCard.temperature}
                   text={weatherCard.text}
                 />
               )

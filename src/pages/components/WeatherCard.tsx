@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUp, CaretDown, CaretUp, Drop } from 'phosphor-react'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { SettingsContext } from '../../context/SettingsContext'
 
 import styles from '../styles/WeatherCard.module.scss'
 
@@ -9,7 +10,7 @@ interface WeatherCardProps {
     probability: number
     precipitation: number
   }
-  temperature: {
+  temperatures: {
     min: number
     max: number
   }
@@ -19,10 +20,12 @@ interface WeatherCardProps {
 export function WeatherCard({
   date,
   rain,
-  temperature,
+  temperatures,
   text,
 }: WeatherCardProps) {
   const [openCardState, setOpenCardState] = useState(false)
+
+  const { temperature, precipitation } = useContext(SettingsContext)
 
   return (
     <div className={styles.weatherCardWrapper}>
@@ -48,11 +51,19 @@ export function WeatherCard({
           <div className={styles.temperatureDataDiv}>
             <div className={styles.temperatureUpDiv}>
               <ArrowUp size={18} />
-              <span>{temperature.max}°c</span>
+              <span>
+                {temperature === 'celsius'
+                  ? `${temperatures.max}°C`
+                  : `${Math.round(temperatures.max * 1.8 + 32)}°F`}
+              </span>
             </div>
             <div className={styles.temperatureDownDiv}>
               <ArrowDown size={18} />
-              <span>{temperature.min}°c</span>
+              <span>
+                {temperature === 'celsius'
+                  ? `${temperatures.min}°C`
+                  : `${Math.round(temperatures.min * 1.8 + 32)}°F`}
+              </span>
             </div>
           </div>
         </div>
@@ -61,7 +72,10 @@ export function WeatherCard({
           <div className={styles.rainDataDiv}>
             <Drop size={18} weight={'fill'} />
             <span>
-              {rain.precipitation}mm - {rain.probability}%
+              {precipitation === 'milimeters'
+                ? `${rain.precipitation}mm`
+                : `${(rain.precipitation / 25.4).toFixed(2)}in`}{' '}
+              - {rain.probability}%
             </span>
           </div>
         </div>

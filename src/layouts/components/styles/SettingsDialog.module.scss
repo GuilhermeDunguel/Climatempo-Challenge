@@ -1,0 +1,74 @@
+@import '../../../styles/globals.scss';
+
+.settingsModalWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  position: absolute;
+  top: 42px;
+
+  padding: 1.5rem;
+
+  width: 100%;
+
+  background-color: $gray50;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+
+  h2 {
+    color: $gray400;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .settingsButtonsWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    .settingHeader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      margin-bottom: 0.5rem;
+
+      color: $blue500;
+    }
+
+    .buttonsDiv {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .buttonActive,
+      .buttonInactive {
+        padding: 0.5rem 0.75rem;
+        border-radius: $radius-sm;
+
+        &:focus {
+          outline: 2px solid $blue700;
+        }
+      }
+
+      .buttonActive {
+        color: $gray50;
+        background-color: $blue500;
+      }
+
+      .buttonInactive {
+        color: $blue500;
+
+        padding: calc(0.5rem - 2px) calc(0.75rem - 2px);
+
+        border: 2px solid $blue500;
+        background: transparent;
+      }
+    }
+  }
+}
