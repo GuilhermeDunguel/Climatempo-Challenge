@@ -19,7 +19,9 @@
 
 ### 🔗 Links: 
 &nbsp; • Deploy: <a href="https://climatempo-challenge-pi.vercel.app/" target="_blank">Clique aqui</a>\
-&nbsp; • Servidor: <a href="https://github.com/GuilhermeDunguel/Climatempo-Challenge-Server" target="_blank">Clique aqui</a>
+&nbsp; • Servidor: <a href="https://github.com/GuilhermeDunguel/Climatempo-Challenge-Server" target="_blank">Clique aqui</a>\
+&nbsp; • Figma: <a href="https://www.figma.com/file/IeI4LBINBtfn4shoOfjiri/Untitled?node-id=49%3A978&t=E2hhWE4HgX1D54N3-1" target="_blank">Clique aqui</a>
+
 
 <br>
 
