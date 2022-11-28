@@ -19,9 +19,22 @@ export const SettingsContext = createContext({} as SettingsContextProps)
 export function SettingsContextProvider({
   children,
 }: SettingsContextProviderProps) {
-  const [temperature, setTemperature] = useState<temperature>('celsius')
-  const [precipitation, setPrecipitation] =
-    useState<precipitation>('milimeters')
+  const [temperature, setTemperature] = useState<temperature>(
+    (localStorage.getItem(
+      'temperature-settings@climatempo-v1.0.1'
+    ) as temperature) || 'celsius'
+  )
+  const [precipitation, setPrecipitation] = useState<precipitation>(
+    (localStorage.getItem(
+      'precipitation-settings@climatempo-v1.0.1'
+    ) as precipitation) || 'milimeters'
+  )
+
+  localStorage.setItem('temperature-settings@climatempo-v1.0.1', temperature)
+  localStorage.setItem(
+    'precipitation-settings@climatempo-v1.0.1',
+    precipitation
+  )
 
   return (
     <SettingsContext.Provider
