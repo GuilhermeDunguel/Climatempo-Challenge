@@ -62,14 +62,13 @@
           margin-right: 0.5rem;
 
           border: 0.1875rem solid $red500;
+          background-color: $red500;
           border-radius: 500px;
         }
       }
     }
 
     .temperatureWrapper {
-      .temperatureTitle {
-      }
       .temperatureDataDiv {
         display: flex;
         align-items: center;
@@ -108,6 +107,7 @@
       .rainTitle {
         &::before {
           border: 0.1875rem solid $sky500;
+          background-color: $blue500;
         }
       }
       .rainDataDiv {
