@@ -11,7 +11,7 @@ header {
 
     padding: 0.625rem;
 
-    width: 100vw;
+    width: 100%;
 
     background-color: $blue500;
 
@@ -97,6 +97,26 @@ header {
         .autoCompleteWrapper {
           display: flex;
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  .searchBarInputDiv {
+    margin: 0 auto;
+    max-width: 400px;
+
+    .autoCompleteWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100vw;
+
+      button {
+        max-width: 400px;
+        width: 100%;
       }
     }
   }

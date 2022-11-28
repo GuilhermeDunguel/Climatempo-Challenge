@@ -23,3 +23,10 @@
     text-align: center;
   }
 }
+
+@media (min-width: 400px) {
+  .wellcomeWrapper {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}
