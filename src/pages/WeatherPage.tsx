@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { APIDataContext } from '../../context/APIDataContext'
-import { WeatherCard } from './WeatherCard'
+import { WeatherCard } from '../components/WeatherCard'
+import { APIDataContext } from '../context/APIDataContext'
 
-import styles from '../styles/WeatherPage.module.scss'
+import styles from './styles/WeatherPage.module.scss'
 
 export function WeatherPage() {
   const { weather } = useContext(APIDataContext)

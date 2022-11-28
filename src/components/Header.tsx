@@ -3,9 +3,9 @@ import styles from './styles/Header.module.scss'
 
 import * as Dialog from '@radix-ui/react-dialog'
 
-import logoWhite from '../../assets/logo-white.png'
+import logoWhite from '../assets/logo-white.png'
 import { List, MagnifyingGlass, X } from 'phosphor-react'
-import { APIDataContext } from '../../context/APIDataContext'
+import { APIDataContext } from '../context/APIDataContext'
 import SettingsDialog from './SettingsDialog'
 
 export default function Header() {

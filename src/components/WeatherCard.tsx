@@ -1,9 +1,9 @@
 import { ArrowDown, ArrowUp, CaretDown, CaretUp, Drop } from 'phosphor-react'
 import React, { useContext, useState } from 'react'
-import { SettingsContext } from '../../context/SettingsContext'
-import { dateFormatter } from '../../utils/formatter'
+import { SettingsContext } from '../context/SettingsContext'
 
-import styles from '../styles/WeatherCard.module.scss'
+import styles from './styles/WeatherCard.module.scss'
+import { dateFormatter } from '../utils/formatter'
 
 interface WeatherCardProps {
   date: string

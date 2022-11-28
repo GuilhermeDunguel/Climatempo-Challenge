@@ -4,7 +4,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 
 import styles from './styles/SettingsDialog.module.scss'
 import { CloudSnow, Thermometer } from 'phosphor-react'
-import { SettingsContext } from '../../context/SettingsContext'
+import { SettingsContext } from '../context/SettingsContext'
 
 export default function SettingsDialog() {
   const { temperature, setTemperature, precipitation, setPrecipitation } =

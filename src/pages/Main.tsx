@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { APIDataContext } from '../context/APIDataContext'
-import { LoadingPage } from './components/LoadingPage'
-import { WeatherPage } from './components/WeatherPage'
-import { WellcomePage } from './components/WellcomePage'
+import { LoadingPage } from './LoadingPage'
+import { WeatherPage } from './WeatherPage'
+import { WellcomePage } from './WellcomePage'
 
 export function Main() {
   const { weather, localeId } = useContext(APIDataContext)

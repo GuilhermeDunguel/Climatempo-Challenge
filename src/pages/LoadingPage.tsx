@@ -1,7 +1,7 @@
 import { CircleNotch } from 'phosphor-react'
 import React from 'react'
 
-import styles from '../styles/LoadingPage.module.scss'
+import styles from './styles/LoadingPage.module.scss'
 
 export function LoadingPage() {
   return (

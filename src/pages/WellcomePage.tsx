@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from '../styles/WellcomePage.module.scss'
+import styles from './styles/WellcomePage.module.scss'
 
 export function WellcomePage() {
   return (
