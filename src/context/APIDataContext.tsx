@@ -2,12 +2,10 @@ import React, {
   createContext,
   ReactNode,
   useCallback,
-  useContext,
   useEffect,
   useState,
 } from 'react'
 import { api } from '../utils/axios'
-import { SettingsContext } from './SettingsContext'
 
 interface localeDataType {
   id: number
@@ -66,7 +64,7 @@ export function APIDataContextProvider({ children }: ContextProviderProps) {
     setWeather([])
 
     const weatherResponse: weatherDataType[] = await api
-      .get('weather')
+      .get('/weather')
       .then((data) => data.data)
 
     setLocales(await api.get('locales').then((data) => data.data))
